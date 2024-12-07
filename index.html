@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrossPoint Course Choosing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+
+        .nav {
+            height: 80px;
+            background-color: #3474eb;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav h1 {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #f0f0f0;
+        }
+
+        .login-button {
+            padding: 0.5rem 1.5rem;
+            background-color: white;
+            border: none;
+            border-radius: 4px;
+            color: #3474eb;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .login-button:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏部分 - 固定在页面顶部 -->
+    <div class="nav">
+        <h1>CrossPoint Course Choosing System</h1>
+        <!-- 导航链接 - 限制：没有当前页面高亮显示 -->
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#profile">My Profile</a></li>
+            <li><a href="#logout">Logout</a></li>
+        </ul>
+        <!-- 登录按钮 - 限制：没有登录状态判断，总是显示 -->
+        <button class="login-button">Login</button>
+    </div>
+</body>
+
+</html>

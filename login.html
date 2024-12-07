@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - CrossPoint Course Choosing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f7fa;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            margin: 0 1rem;
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .login-header h1 {
+            color: #3474eb;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .login-header p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #3474eb;
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 1rem;
+            background-color: #3474eb;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .login-button:hover {
+            background-color: #2461d4;
+            transform: translateY(-2px);
+        }
+
+        .forgot-password {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .forgot-password a {
+            color: #3474eb;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: #dc3545;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        input:invalid+.error-message {
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 登录表单容器 -->
+    <div class="login-container">
+        <!-- 登录页面标题 -->
+        <div class="login-header">
+            <h1>Welcome Back</h1>
+            <p>Please login to access your courses</p>
+        </div>
+        <!-- 登录表单 
+         限制：
+         1. 使用GET方法不安全，应该用POST
+         2. 没有CSRF保护
+         3. 没有验证码机制
+    -->
+        <form action="courses.html" method="GET">
+            <!-- 学生ID输入组 
+             限制：
+             1. 只验证8位数字
+             2. 没有实时验证
+             3. 没有学号存在性检查
+        -->
+            <div class="form-group">
+                <label for="student-id">Student ID</label>
+                <input type="text" id="student-id" name="student-id" pattern="[0-9]{8}" required
+                    placeholder="Enter your 8-digit student ID">
+                <div class="error-message">Please enter a valid 8-digit student ID</div>
+            </div>
+            <!-- 密码输入组
+             限制：
+             1. 没有密码强度要求
+             2. 没有密码规则提示
+             3. 没有显示/隐藏密码选项
+        -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
+            </div>
+            <!-- 登录按钮 - 限制：没有防止重复提交机制 -->
+            <button type="submit" class="login-button">Login</button>
+        </form>
+        <!-- 忘记密码链接 - 限制：功能未实现 -->
+        <div class="forgot-password">
+            <a href="#forgot-password">Forgot Password?</a>
+        </div>
+    </div>
+</body>
+
+</html>
